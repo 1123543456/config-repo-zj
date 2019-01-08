@@ -14,33 +14,33 @@ spring:
     sampler:
       percentage: 0.2
 
-# 分库分表支持
-sharding:
-  jdbc:
-    defaultDataSourceName:
-      type: com.zaxxer.hikari.HikariDataSource
-      driver-class-name: com.mysql.jdbc.Driver
-      username: root
-      password: 123456
-      jdbc-url: jdbc:mysql://127.0.0.1:3306/pig?characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=false
+spring:
     datasource:
-      names: ds
-      ds:
-        type: com.zaxxer.hikari.HikariDataSource
-        driver-class-name: com.mysql.jdbc.Driver
-        username: root
-        password: 123456
-        jdbc-url: jdbc:mysql://127.0.0.1:3306/pig?characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=false
-    config:
-      sharding:
-        tables:
-          sys_log:
-            actual-data-nodes: ds.sys_log_${0..1}
-            table-strategy:
-              inline:
-                sharding-column: id
-                algorithm-expression: sys_log_${id % 2}
-            key-generator-column-name: id
+      druid:
+        type: com.alibaba.druid.pool.DruidDataSource
+        medical-cloud:
+          url: jdbc:mysql://localhost:3306/pig?allowMultiQueries=true&useUnicode=true&characterEncoding=UTF-8
+          username: root
+          password: 123456
+          driverClassName: com.mysql.jdbc.Driver
+          tomcat:
+            max-active: 20
+            min-idle: 20
+            initial-size: 10
+            test-on-borrow: true
+            validation-query: select 1
+
+        wechat-report:
+          url: jdbc:mysql://localhost:3306/wechat-report?allowMultiQueries=true&useUnicode=true&characterEncoding=UTF-8
+          username: root
+          password: 123456
+          driverClassName: com.mysql.jdbc.Driver
+          tomcat:
+            max-active: 20
+            min-idle: 20
+            initial-size: 10
+            test-on-borrow: true
+            validation-query: select 1
 
 #mybaits-plus配置，修改主键类型，mapper.xml、type 别名等
 mybatis-plus:
