@@ -31,15 +31,15 @@ spring:
 
       wechat-report:
         url: jdbc:mysql://localhost:3306/wechat-report?allowMultiQueries=true&useUnicode=true&characterEncoding=UTF-8
-          username: root
-          password: 123456
-          driverClassName: com.mysql.jdbc.Driver
-          tomcat:
-            max-active: 20
-            min-idle: 20
-            initial-size: 10
-            test-on-borrow: true
-            validation-query: select 1
+        username: root
+        password: 123456
+        driverClassName: com.mysql.jdbc.Driver
+        tomcat:
+          max-active: 20
+          min-idle: 20
+          initial-size: 10
+          test-on-borrow: true
+          validation-query: select 1
 
 #mybaits-plus配置，修改主键类型，mapper.xml、type 别名等
 mybatis-plus:
