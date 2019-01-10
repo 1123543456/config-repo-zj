@@ -15,8 +15,11 @@ spring:
       percentage: 0.2
 
   datasource:
+  
     dynamic:
       primary: medical-cloud #设置默认的数据源或者数据源组,默认值即为master
+      druid:
+        max-active: 20
       datasource:
         medical-cloud:
           url: jdbc:mysql://localhost:3306/pig?allowMultiQueries=true&useUnicode=true&characterEncoding=UTF-8
