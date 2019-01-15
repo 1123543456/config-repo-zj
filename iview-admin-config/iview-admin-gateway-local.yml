@@ -60,6 +60,8 @@ ignore:
     - /webjars/**
     - /demo/**
     - /wechat/**
+    - /upms/**
+    - /report/**
     
   clients:
     - app
