@@ -59,5 +59,7 @@ ignore:
     - /swagger/api-docs
     - /webjars/**
     - /wechat/**
+    - /upms/**
+    - /report/*
   clients:
     - app
