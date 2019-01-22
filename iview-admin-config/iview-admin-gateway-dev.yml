@@ -13,7 +13,7 @@ zuul:
   ribbon:
     eager-load:
       enabled: true
-      clients: iview-admin-auth,iview-admin-upms-service,iview-admin-demo-service
+      clients: iview-admin-auth,iview-admin-upms-service,iview-admin-demo-service,iview-admin-report-service
   ignoredServices: '*'
   host:
     connect-timeout-millis: 10000
